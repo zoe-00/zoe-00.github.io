@@ -216,8 +216,7 @@ hr:before,
 #article-container.post-content h4:before,
 #article-container.post-content h5:before,
 #article-container.post-content h6:before,
-#post .post-copyright:before,
-#post .post-outdate-notice:before,
+.post-outdate-notice:before,
 .note:not(.no-icon)::before {
   display: inline-block;
   font-weight: 600;
@@ -4535,14 +4534,21 @@ blockquote footer cite:before {
   -o-transition: box-shadow 0.3s ease-in-out;
   -ms-transition: box-shadow 0.3s ease-in-out;
   transition: box-shadow 0.3s ease-in-out;
+  overflow: hidden;
+  border-radius: 12px !important;
+  background-color: #eff1f3;
 }
 #post .post-copyright:before {
+  background: var(--heo-post-blockquote-bg);
   position: absolute;
-  top: 0.1rem;
-  right: 0.6rem;
-  color: #49b1f5;
-  content: '\f1f9';
-  font-size: 1rem;
+  right: -26px;
+  top: -120px;
+  content: '\f25e';
+  font-size: 200px;
+  font-family: 'Font Awesome 5 Brands';
+  opacity: 0.2;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+  filter: alpha(opacity=20);
 }
 #post .post-copyright:hover {
   -webkit-box-shadow: 0 0 8px 0 rgba(232,237,250,0.6), 0 2px 4px 0 rgba(232,237,250,0.5);
@@ -4556,13 +4562,16 @@ blockquote footer cite:before {
   padding-left: 0.3rem;
 }
 #post .post-copyright .post-copyright-info a {
-  text-decoration: underline;
+  text-decoration: none;
   word-break: break-word;
 }
 #post .post-copyright .post-copyright-info a:hover {
   text-decoration: none;
 }
-#post .post-outdate-notice {
+.post-copyright-cc-info {
+  color: #49b1f5;
+}
+.post-outdate-notice {
   position: relative;
   margin: 0 0 1rem;
   padding: 0.5em 1.2em;
@@ -4572,7 +4581,7 @@ blockquote footer cite:before {
   padding: 0.5em 1em 0.5em 2.6em;
   border-left: 5px solid #ff8080;
 }
-#post .post-outdate-notice:before {
+.post-outdate-notice:before {
   position: absolute;
   top: 50%;
   left: 0.9em;
@@ -4584,7 +4593,7 @@ blockquote footer cite:before {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-#post .ads-wrap {
+.ads-wrap {
   margin: 2rem 0;
 }
 .relatedPosts {
